@@ -26,15 +26,13 @@ public class CategoryAndProductPage extends BasePage {
     public void clickProductRandom(){
 
         Random rn = new Random();
-        int a = rn.nextInt(prodList_Loc.size())+1;
+        int a = rn.nextInt(prodList_Loc.size());
 
-        String loc = "(//*[contains(@class,'MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3')])["+a+"]";
+
         BrowserUtils.waitFor(1);
-        WebElement randomProd = Driver.get().findElement(By.xpath(loc));
+        BrowserUtils.hover(prodList_Loc.get(a));
         BrowserUtils.waitFor(1);
-        BrowserUtils.hover(randomProd);
-        BrowserUtils.waitFor(1);
-        randomProd.click();
+        prodList_Loc.get(a).click();
         BrowserUtils.waitFor(1);
     }
 
