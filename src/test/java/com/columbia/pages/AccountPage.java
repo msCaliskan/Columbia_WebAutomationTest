@@ -58,8 +58,6 @@ public class AccountPage extends BasePage{
 
     @FindBy(xpath = "(//*[text()='Ödeme Adımına Geç'])[2]") public WebElement odemeAdiminaGec_Loc;
 
-    @FindBy(xpath = "(//*[text()='Giriş Yap'])[2]") public WebElement girisYapBtn_Loc;
-
     @FindBy(xpath = "//*[text()='Çıkış']") public WebElement cikisYap_Loc;
 
     public void getInformation(String name, String lastname, String email, String phone){
@@ -102,9 +100,9 @@ public class AccountPage extends BasePage{
 
     public void enterAdress(){
         BrowserUtils.waitFor(1);
-        adresBasligi_Loc.sendKeys("İşyeri");
+        adresBasligi_Loc.sendKeys("Isyeri");
         ad_Loc.sendKeys("Musa");
-        soyad_Loc.sendKeys("Çalışkan");
+        soyad_Loc.sendKeys("Caliskan");
         email_Loc.sendKeys(ConfigurationReader.get("user_email"));
         telefon_Loc.click();
         telefon_Loc.sendKeys("075002920");
@@ -119,7 +117,7 @@ public class AccountPage extends BasePage{
         List<WebElement> allCity = dataList_Loc;
 
         for (int i = 1; i <= allCity.size(); i++) {
-            if (allCity.get(i).getText().contains("İstanbul")){
+            if (allCity.get(i).getText().contains("Adana")){
                 allCity.get(i).click();
                 break;
             }
@@ -133,7 +131,7 @@ public class AccountPage extends BasePage{
         List<WebElement> allCounty= dataList_Loc;
 
         for (int i = 1; i <= allCounty.size(); i++) {
-            if (allCounty.get(i).getText().contains("BESIKTAS")){
+            if (allCounty.get(i).getText().contains("CEYHAN")){
                 allCounty.get(i).click();
                 break;
             }
@@ -147,9 +145,9 @@ public class AccountPage extends BasePage{
     public void enterGuestAdress(){
         BrowserUtils.scrollDown();
         BrowserUtils.waitFor(1);
-        adresBasligi_Loc.sendKeys("İşyeri");
+        adresBasligi_Loc.sendKeys("Isyeri");
         ad_Loc.sendKeys("Musa");
-        soyad_Loc.sendKeys("Çalışkan");
+        soyad_Loc.sendKeys("Caliskan");
         email_Loc.sendKeys(ConfigurationReader.get("guest_email"));
         telefon_Loc.click();
         telefon_Loc.sendKeys("075002920");
@@ -164,7 +162,7 @@ public class AccountPage extends BasePage{
         List<WebElement> allCity = dataList_Loc;
 
         for (int i = 1; i <= allCity.size(); i++) {
-            if (allCity.get(i).getText().contains("İstanbul")){
+            if (allCity.get(i).getText().contains("Adana")){
                 allCity.get(i).click();
                 break;
             }
@@ -178,7 +176,7 @@ public class AccountPage extends BasePage{
         List<WebElement> allCounty= dataList_Loc;
 
         for (int i = 1; i <= allCounty.size(); i++) {
-            if (allCounty.get(i).getText().contains("BESIKTAS")){
+            if (allCounty.get(i).getText().contains("CEYHAN")){
                 allCounty.get(i).click();
                 break;
             }
@@ -213,7 +211,7 @@ public class AccountPage extends BasePage{
         List<WebElement> allCity = dataList_Loc;
 
         for (int i = 1; i <= allCity.size(); i++) {
-            if (allCity.get(i).getText().contains("İstanbul")){
+            if (allCity.get(i).getText().contains("Bursa")){
                 allCity.get(i).click();
                 break;
             }
@@ -224,7 +222,7 @@ public class AccountPage extends BasePage{
         List<WebElement> allStore = magazaList_Loc;
 
         for (int i = 1; i <= allStore.size(); i++) {
-            if (allStore.get(i).getText().contains("Cevahir AVM")){
+            if (allStore.get(i).getText().contains("Marka AVM")){
                 allStore.get(i).click();
                 break;
             }
@@ -232,7 +230,7 @@ public class AccountPage extends BasePage{
         BrowserUtils.waitFor(1);
 
         ad_Loc.sendKeys("Musa");
-        soyad_Loc.sendKeys("Çalışkan");
+        soyad_Loc.sendKeys("Caliskan");
         email_Loc.sendKeys(ConfigurationReader.get("user_email"));
         telefon_Loc.sendKeys("05075002920");
         BrowserUtils.waitFor(1);

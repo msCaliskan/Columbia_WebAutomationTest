@@ -111,8 +111,8 @@ public class StepDefinitions {
         new CheckoutPage().invalidCard();
     }
 
-    @When("The user selects 3D Secure, Ön Bilgilendirme and Mesafeli Satış Sözleşmesi buttons")
-    public void the_user_selects_3D_Secure_Ön_Bilgilendirme_and_Mesafeli_Satış_Sözleşmesi_buttons() {
+    @When("The user selects 3D Secure, On Bilgilendirme and Mesafeli Satis Sozlesmesi buttons")
+    public void the_user_selects_3D_Secure_On_Bilgilendirme_and_Mesafeli_Satis_Sozlesmesi_buttons() {
         new CheckoutPage().checkBox();
     }
 

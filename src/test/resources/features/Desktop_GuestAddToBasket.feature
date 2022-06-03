@@ -16,7 +16,7 @@ Feature: Desktop | Guest add to basket
     And The user clicks "Kaydet" button
     And The user clicks Ödeme Adımına Geç button
     And The user enters invalid informations
-    And The user selects 3D Secure, Ön Bilgilendirme and Mesafeli Satış Sözleşmesi buttons
+    And The user selects 3D Secure, On Bilgilendirme and Mesafeli Satis Sozlesmesi buttons
     And The user clicks "Siparişi Tamamla" button
     And The user verifies "Kart numarası geçersizdir" message
     Then The user clicks Sepetim button

@@ -16,8 +16,6 @@ public class HomePage extends BasePage{
 
     @FindBy(xpath = "//*[@d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z']") public WebElement popUP_Loc;
 
-    @FindBy(css = "#arrow-1568620800441") public WebElement arrow_Loc;
-
     @FindBy(xpath = "//span[text()='Kabul Ediyorum']") public WebElement cookies_Loc;
 
     @FindBy(xpath = "//*[@data-testid='header-account-button']") public WebElement loginBtn_Loc;
@@ -32,8 +30,7 @@ public class HomePage extends BasePage{
 
     public void gotoHomePage(){
         Driver.get().get(ConfigurationReader.get("url"));
-//        BrowserUtils.waitForClickablility(arrow_Loc,5);
-//        arrow_Loc.click();
+
         BrowserUtils.waitForClickablility(cookies_Loc,5);
         cookies_Loc.click();
         BrowserUtils.waitForClickablility(popUP_Loc,5);
