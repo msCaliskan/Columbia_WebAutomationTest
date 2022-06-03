@@ -44,8 +44,6 @@ public class AccountPage extends BasePage{
 
     @FindBy(css = "#storeId") public WebElement magaza_Loc;
 
-    @FindBy(xpath = "//*[@class='MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button']") public List<WebElement> magazaList_Loc;
-
     @FindBy(css = "#zipPostalCode") public WebElement postaKodu_Loc;
 
     @FindBy(css = "#streetAddress") public WebElement adres_Loc;
@@ -116,8 +114,8 @@ public class AccountPage extends BasePage{
         BrowserUtils.waitFor(1);
         List<WebElement> allCity = dataList_Loc;
 
-        for (int i = 1; i <= allCity.size(); i++) {
-            if (allCity.get(i).getText().contains("Adana")){
+        for (int i = 0; i < allCity.size(); i++) {
+            if (allCity.get(i).getText().contains("Ankara")){
                 allCity.get(i).click();
                 break;
             }
@@ -130,8 +128,8 @@ public class AccountPage extends BasePage{
 
         List<WebElement> allCounty= dataList_Loc;
 
-        for (int i = 1; i <= allCounty.size(); i++) {
-            if (allCounty.get(i).getText().contains("CEYHAN")){
+        for (int i = 0; i < allCounty.size(); i++) {
+            if (allCounty.get(i).getText().contains("EVREN")){
                 allCounty.get(i).click();
                 break;
             }
@@ -161,8 +159,8 @@ public class AccountPage extends BasePage{
         BrowserUtils.waitFor(1);
         List<WebElement> allCity = dataList_Loc;
 
-        for (int i = 1; i <= allCity.size(); i++) {
-            if (allCity.get(i).getText().contains("Adana")){
+        for (int i = 0; i < allCity.size(); i++) {
+            if (allCity.get(i).getText().contains("Ankara")){
                 allCity.get(i).click();
                 break;
             }
@@ -175,8 +173,8 @@ public class AccountPage extends BasePage{
 
         List<WebElement> allCounty= dataList_Loc;
 
-        for (int i = 1; i <= allCounty.size(); i++) {
-            if (allCounty.get(i).getText().contains("CEYHAN")){
+        for (int i = 0; i < allCounty.size(); i++) {
+            if (allCounty.get(i).getText().contains("EVREN")){
                 allCounty.get(i).click();
                 break;
             }
@@ -210,7 +208,7 @@ public class AccountPage extends BasePage{
         BrowserUtils.waitFor(1);
         List<WebElement> allCity = dataList_Loc;
 
-        for (int i = 1; i <= allCity.size(); i++) {
+        for (int i = 0; i < allCity.size(); i++) {
             if (allCity.get(i).getText().contains("Bursa")){
                 allCity.get(i).click();
                 break;
@@ -219,9 +217,9 @@ public class AccountPage extends BasePage{
 
         magaza_Loc.click();
         BrowserUtils.waitFor(1);
-        List<WebElement> allStore = magazaList_Loc;
+        List<WebElement> allStore = dataList_Loc;
 
-        for (int i = 1; i <= allStore.size(); i++) {
+        for (int i = 0; i < allStore.size(); i++) {
             if (allStore.get(i).getText().contains("Marka AVM")){
                 allStore.get(i).click();
                 break;
