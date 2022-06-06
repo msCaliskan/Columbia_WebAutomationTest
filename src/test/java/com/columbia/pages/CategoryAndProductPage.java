@@ -3,6 +3,7 @@ package com.columbia.pages;
 import com.columbia.utilities.BrowserUtils;
 import com.columbia.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -22,6 +23,10 @@ public class CategoryAndProductPage extends BasePage {
     @FindBy(xpath = "//*[contains(@class,'MuiTypography-button')]") public WebElement sepeteEkle_Loc;
 
     @FindBy(xpath = "//*[@class='MuiTypography-root jss140 MuiTypography-body1']") public List<WebElement> productName_Loc;
+
+    @FindBy(xpath = "//*[@class='MuiTypography-root jss159 MuiTypography-subtitle1']") public WebElement price_Loc;
+
+    @FindBy(css = "#filled-number") public WebElement priceHolder_Loc;
 
     public void clickProductRandom(){
 
@@ -58,5 +63,22 @@ public class CategoryAndProductPage extends BasePage {
         for (int i = 0; i < productName_Loc.size(); i++) {
              allNames.get(i).contains(string);
         }
+    }
+    public void validPrice(){
+        String price = price_Loc.getText();
+        String a = price.substring(0, price.length()-6);
+
+        if(a.contains(".")){
+            a = a.replace(".","");
+        }
+        int b = Integer.parseInt(a);
+        int c= b-5;
+        System.out.println("Girilecek değer = " +c);
+        priceHolder_Loc.sendKeys(Keys.CONTROL+"a");
+        priceHolder_Loc.sendKeys(Keys.DELETE);
+        BrowserUtils.waitFor(1);
+        priceHolder_Loc.sendKeys(Integer.toString(c));
+        BrowserUtils.waitFor(2);
+
     }
 }

@@ -4,6 +4,7 @@ package com.columbia.pages;
 import com.columbia.utilities.BrowserUtils;
 import com.columbia.utilities.ConfigurationReader;
 import com.columbia.utilities.Driver;
+import io.cucumber.java.en_old.Ac;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -107,8 +108,6 @@ public class AccountPage extends BasePage{
         BrowserUtils.waitFor(2);
 
         new Actions(Driver.get()).moveToElement(ulke_Loc).doubleClick(ulke_Loc).perform();
-
-        BrowserUtils.waitFor(1);
 
         sehir_Loc.click();
         BrowserUtils.waitFor(1);
