@@ -34,9 +34,7 @@ public class StepDefinitions {
 
     @When("The user clicks login button")
     public void the_user_clicks_login_button() {
-        BrowserUtils.waitFor(1);
-        new HomePage().loginBtn_Loc.click();
-        BrowserUtils.waitFor(2);
+        new HomePage().clickLogin();
     }
 
     @Given("The user clicks hamburger menu button")

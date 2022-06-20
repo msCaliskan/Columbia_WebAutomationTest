@@ -14,7 +14,7 @@ import java.util.List;
 
 public class HomePage extends BasePage{
 
-    @FindBy(xpath = "//*[@d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z']") public WebElement popUP_Loc;
+    @FindBy(xpath = "//*[@aria-label='close']") public WebElement popUP_Loc;
 
     @FindBy(xpath = "//span[text()='Kabul Ediyorum']") public WebElement cookies_Loc;
 
@@ -31,10 +31,17 @@ public class HomePage extends BasePage{
     public void gotoHomePage(){
         Driver.get().get(ConfigurationReader.get("url"));
 
+        BrowserUtils.waitFor(2);
         BrowserUtils.waitForClickablility(cookies_Loc,5);
         cookies_Loc.click();
         BrowserUtils.waitForClickablility(popUP_Loc,5);
         popUP_Loc.click();
+    }
+
+    public void clickLogin(){
+        BrowserUtils.waitForClickablility(loginBtn_Loc,5);
+        loginBtn_Loc.click();
+        BrowserUtils.waitFor(2);
     }
 
     public void login(){
