@@ -104,7 +104,7 @@ public class AccountPage extends BasePage{
         soyad_Loc.sendKeys("Caliskan");
         email_Loc.sendKeys(ConfigurationReader.get("user_email"));
         telefon_Loc.click();
-        telefon_Loc.sendKeys("075002920");
+        telefon_Loc.sendKeys("075555555");
         BrowserUtils.waitFor(2);
 
         new Actions(Driver.get()).moveToElement(ulke_Loc).doubleClick(ulke_Loc).perform();
@@ -136,18 +136,18 @@ public class AccountPage extends BasePage{
         BrowserUtils.waitFor(1);
         postaKodu_Loc.sendKeys("34340");
         BrowserUtils.waitFor(1);
-        adres_Loc.sendKeys("Levent, HAN Spaces, Nispetiye Cd No:24");
+        adres_Loc.sendKeys("test test test");
         BrowserUtils.waitFor(1);
     }
     public void enterGuestAdress(){
         BrowserUtils.scrollDown();
         BrowserUtils.waitFor(1);
         adresBasligi_Loc.sendKeys("Isyeri");
-        ad_Loc.sendKeys("Musa");
-        soyad_Loc.sendKeys("Caliskan");
+        ad_Loc.sendKeys("Test");
+        soyad_Loc.sendKeys("Test");
         email_Loc.sendKeys(ConfigurationReader.get("guest_email"));
         telefon_Loc.click();
-        telefon_Loc.sendKeys("075002920");
+        telefon_Loc.sendKeys("075555555");
         BrowserUtils.waitFor(2);
 
         new Actions(Driver.get()).moveToElement(ulke_Loc).doubleClick(ulke_Loc).perform();
@@ -181,7 +181,7 @@ public class AccountPage extends BasePage{
         BrowserUtils.waitFor(1);
         postaKodu_Loc.sendKeys("34340");
         BrowserUtils.waitFor(1);
-        adres_Loc.sendKeys("Levent, HAN Spaces, Nispetiye Cd No:24");
+        adres_Loc.sendKeys("test test test");
         BrowserUtils.waitFor(1);
     }
 
@@ -226,10 +226,10 @@ public class AccountPage extends BasePage{
         }
         BrowserUtils.waitFor(1);
 
-        ad_Loc.sendKeys("Musa");
-        soyad_Loc.sendKeys("Caliskan");
+        ad_Loc.sendKeys("Test");
+        soyad_Loc.sendKeys("Test");
         email_Loc.sendKeys(ConfigurationReader.get("user_email"));
-        telefon_Loc.sendKeys("05075002920");
+        telefon_Loc.sendKeys("05555555555");
         BrowserUtils.waitFor(1);
 
     }

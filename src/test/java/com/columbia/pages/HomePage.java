@@ -4,17 +4,19 @@ import com.columbia.utilities.BrowserUtils;
 import com.columbia.utilities.ConfigurationReader;
 import com.columbia.utilities.Driver;
 import org.junit.Assert;
-import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
-
 
 public class HomePage extends BasePage{
 
-    @FindBy(xpath = "//*[@aria-label='close']") public WebElement popUP_Loc;
+    @FindBy(xpath = "//*[@class='sp-fancybox-iframe sp-fancybox-skin sp-fancybox-iframe-2206 adaptive-resolution']") public WebElement frame_Loc;
+
+    @FindBy(xpath = "//*[@class='selectable-element element-wrap element-close-button no-draggable']") public WebElement popUp_Loc;
+
+    @FindBy(xpath = "//*[@aria-label='close']") public WebElement popUp2_Loc;
 
     @FindBy(xpath = "//span[text()='Kabul Ediyorum']") public WebElement cookies_Loc;
 
@@ -32,14 +34,19 @@ public class HomePage extends BasePage{
         Driver.get().get(ConfigurationReader.get("url"));
 
         BrowserUtils.waitFor(2);
+
+
+        Driver.get().switchTo().frame(frame_Loc);
+        popUp_Loc.click();
+
         BrowserUtils.waitForClickablility(cookies_Loc,5);
         cookies_Loc.click();
-        BrowserUtils.waitForClickablility(popUP_Loc,5);
-        popUP_Loc.click();
+        BrowserUtils.waitForClickablility(popUp2_Loc,5);
+        popUp2_Loc.click();
     }
 
     public void clickLogin(){
-        BrowserUtils.waitForClickablility(loginBtn_Loc,5);
+        BrowserUtils.waitFor(2);
         loginBtn_Loc.click();
         BrowserUtils.waitFor(2);
     }
@@ -65,8 +72,8 @@ public class HomePage extends BasePage{
     }
     public void closePopUp(){
         BrowserUtils.waitFor(2);
-        if (popUP_Loc.isDisplayed()) {
-            popUP_Loc.click();
+        if (popUp2_Loc.isDisplayed()) {
+            popUp2_Loc.click();
             BrowserUtils.waitFor(1);
         }
     }

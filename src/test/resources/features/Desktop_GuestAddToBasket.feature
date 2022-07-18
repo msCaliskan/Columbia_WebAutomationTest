@@ -8,7 +8,7 @@ Feature: Desktop | Guest add to basket
     When The user verifies redirected to "/kadin-tekstil-yagmurluk" page
     And The user clicks anyone product
     And The user chooses color and size
-    And The user clicks "SEPETE GÖZAT" button
+    And The user clicks "SİPARİŞİ TAMAMLA" button
     And The user verifies redirected to "/basket" page
     When The user clicks "Üye Olmadan Devam Et" button
     And The user verifies redirected to "/checkout" page
@@ -20,6 +20,5 @@ Feature: Desktop | Guest add to basket
     And The user clicks "Siparişi Tamamla" button
     And The user verifies "Kart numarası geçersizdir" message
     Then The user clicks Sepetim button
-    And The user clicks "SEPETE GÖZAT" button
-    And The user clicks "Sil" button
+    And The user clicks "Kaldır" button
     And The user verifies message

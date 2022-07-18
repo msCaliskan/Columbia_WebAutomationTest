@@ -1,7 +1,7 @@
-Feature: Desktop | Search User searchs for a product
+Feature: Desktop | Search User searches for a product
 
   @smoke
-  Scenario: User searchs for a product
+  Scenario: User searches for a product
     Given The user visits Columbia homepage
     And The user verifies redirected to homepage
     And The user fills "Mont" in the searchbox and click
