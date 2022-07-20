@@ -24,8 +24,6 @@ public class CategoryAndProductPage extends BasePage {
 
     @FindBy(xpath = "//*[@class='MuiTypography-root jss140 MuiTypography-body1']") public List<WebElement> productName_Loc;
 
-    @FindBy(xpath = "//*[@class='MuiTypography-root jss159 MuiTypography-subtitle1']") public WebElement price_Loc;
-
     @FindBy(css = "#filled-number") public WebElement priceHolder_Loc;
 
     public void clickProductRandom(){
@@ -65,20 +63,17 @@ public class CategoryAndProductPage extends BasePage {
         }
     }
     public void validPrice(){
-        String price = price_Loc.getText();
-        String a = price.substring(0, price.length()-6);
+        String price = priceHolder_Loc.getAttribute("value");
 
-        if(a.contains(".")){
-            a = a.replace(".","");
-        }
-        int b = Integer.parseInt(a);
-        int c= b-5;
-        System.out.println("Girilecek değer = " +c);
+        double b = Double.parseDouble(price);
+        int c= (int)Math.round(b);
+
+        int d = c-5;
+
         priceHolder_Loc.sendKeys(Keys.CONTROL+"a");
         priceHolder_Loc.sendKeys(Keys.DELETE);
         BrowserUtils.waitFor(1);
-        priceHolder_Loc.sendKeys(Integer.toString(c));
+        priceHolder_Loc.sendKeys(Integer.toString(d));
         BrowserUtils.waitFor(2);
-
     }
 }
