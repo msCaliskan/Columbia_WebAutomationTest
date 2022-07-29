@@ -36,8 +36,8 @@ public class HomePage extends BasePage{
         BrowserUtils.waitFor(2);
 
 
-        Driver.get().switchTo().frame(frame_Loc);
-        popUp_Loc.click();
+//        Driver.get().switchTo().frame(frame_Loc);
+//        popUp_Loc.click();
 
         BrowserUtils.waitForClickablility(cookies_Loc,5);
         cookies_Loc.click();

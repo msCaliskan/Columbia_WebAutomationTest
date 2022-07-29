@@ -25,6 +25,7 @@ public abstract class BasePage {
     }
 
     public static String verifyMessage(String msg){
+        BrowserUtils.waitFor(2);
         String msg_Loc = Driver.get().findElement(By.xpath("//*[text()='"+msg+"']")).getText();
 
         return msg_Loc;
@@ -34,7 +35,7 @@ public abstract class BasePage {
     String button_Loc = "//*[text()='"+button+"']";
     BrowserUtils.waitForClickablility(Driver.get().findElement(By.xpath(button_Loc)),5);
     Driver.get().findElement(By.xpath(button_Loc)).click();
-    BrowserUtils.waitFor(1);
+    BrowserUtils.waitFor(2);
     }
 
     /**
