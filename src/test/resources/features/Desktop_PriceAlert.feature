@@ -1,4 +1,5 @@
 Feature: Desktop | Price Alert
+
   @smoke
   Scenario: The user can select to PriceAlert and delete
 
@@ -14,7 +15,6 @@ Feature: Desktop | Price Alert
     Then The user clicks " Fiyatı Düşünce Haber Ver" button
     And The user enters valid price
     Then The user clicks "Kaydet" button
-    And The user verifies "Fiyat alarmı oluşturuldu." message
     And The user clicks login button
     Then The user clicks "Fiyat Alarmlarım" button
     And The user verifies redirected to "/account/priceSubscription" page
