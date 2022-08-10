@@ -107,6 +107,8 @@ public class AccountPage extends BasePage{
         telefon_Loc.sendKeys("075555555");
         BrowserUtils.waitFor(2);
 
+        BrowserUtils.scrollDown();
+        BrowserUtils.waitFor(1);
         new Actions(Driver.get()).moveToElement(ulke_Loc).doubleClick(ulke_Loc).perform();
 
         sehir_Loc.click();
