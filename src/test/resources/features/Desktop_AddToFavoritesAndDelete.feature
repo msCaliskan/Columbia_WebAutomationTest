@@ -19,4 +19,4 @@ Feature: Desktop | Add to favorites and delete
     And The user verifies "Favori ürün bulunmamaktadır." message
     And The user clicks login button
     Then The user clicks "Çıkış Yap" button
-    And The user verifies redirected to homepage
+    And The user verifies redirected to "/?logout=true" page

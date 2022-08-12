@@ -21,4 +21,4 @@ Feature: Desktop | The user adds new adress and delete
     And The user verifies "Teslimat adresi bulunmamaktadır." message
     And The user clicks login button
     And The user clicks "Çıkış Yap" button
-    And The user verifies redirected to homepage
+    And The user verifies redirected to "/?logout=true" page

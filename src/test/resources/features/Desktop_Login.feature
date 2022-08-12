@@ -16,7 +16,7 @@ Feature: Desktop | Login with valid and invalid credentials
     And The user checks "Musa", "Çalışkan", "musainveon@gmail.com" and "0(507) 500 29 20" informations
     And The user clicks login button
     And The user clicks "Çıkış Yap" button
-    And The user verifies redirected to homepage
+    And The user verifies redirected to "/?logout=true" page
 
   Scenario: The user must not be able to login with invalid email
     And The user enters invalid email

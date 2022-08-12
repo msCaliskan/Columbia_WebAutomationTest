@@ -22,4 +22,4 @@ Feature: Desktop | Price Alert
     And The user verifies "Fiyat alarmı bulunmamaktadır." message
     And The user clicks login button
     Then The user clicks "Çıkış Yap" button
-    And The user verifies redirected to homepage
+    And The user verifies redirected to "/?logout=true" page
