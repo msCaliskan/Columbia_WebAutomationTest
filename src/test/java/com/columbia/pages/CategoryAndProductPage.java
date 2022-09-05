@@ -2,6 +2,7 @@ package com.columbia.pages;
 
 import com.columbia.utilities.BrowserUtils;
 import com.columbia.utilities.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -26,16 +27,17 @@ public class CategoryAndProductPage extends BasePage {
 
     @FindBy(css = "#filled-number") public WebElement priceHolder_Loc;
 
+    @FindBy(xpath = "//*[@class='m-productCard__title']") public List<WebElement> prodSize_Loc;
     public void clickProductRandom(){
 
         Random rn = new Random();
-        int a = rn.nextInt(prodList_Loc.size());
+        int a = rn.nextInt(prodSize_Loc.size());
 
 
         BrowserUtils.waitFor(1);
-        BrowserUtils.hover(prodList_Loc.get(a));
+        BrowserUtils.hover(prodSize_Loc.get(a));
         BrowserUtils.waitFor(1);
-        prodList_Loc.get(a).click();
+        prodSize_Loc.get(a).click();
         BrowserUtils.waitFor(1);
     }
 
@@ -54,12 +56,9 @@ public class CategoryAndProductPage extends BasePage {
 
     public void searchResult(String string){
 
-        List<String> allNames = new ArrayList<>();
-        for (WebElement element : prodList_Loc) {
-        allNames.add(element.getText());
-        }
-        for (int i = 0; i < productName_Loc.size(); i++) {
-             allNames.get(i).contains(string);
+        for (int i = 0; i < prodList_Loc.size(); i++) {
+            Assert.assertTrue("Search result value failed at instance [" + i + "]." ,prodList_Loc.get(i).getText().contains(string));
+
         }
     }
     public void validPrice(){
