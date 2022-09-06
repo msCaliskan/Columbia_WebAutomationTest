@@ -23,21 +23,18 @@ public class CategoryAndProductPage extends BasePage {
 
     @FindBy(xpath = "//*[contains(@class,'MuiTypography-button')]") public WebElement sepeteEkle_Loc;
 
-    @FindBy(xpath = "//*[@class='MuiTypography-root jss140 MuiTypography-body1']") public List<WebElement> productName_Loc;
-
     @FindBy(css = "#filled-number") public WebElement priceHolder_Loc;
 
-    @FindBy(xpath = "//*[@class='m-productCard__title']") public List<WebElement> prodSize_Loc;
     public void clickProductRandom(){
 
         Random rn = new Random();
-        int a = rn.nextInt(prodSize_Loc.size());
+        int a = rn.nextInt(prodList_Loc.size());
 
 
         BrowserUtils.waitFor(1);
-        BrowserUtils.hover(prodSize_Loc.get(a));
+        BrowserUtils.hover(prodList_Loc.get(a));
         BrowserUtils.waitFor(1);
-        prodSize_Loc.get(a).click();
+        prodList_Loc.get(a).click();
         BrowserUtils.waitFor(1);
     }
 
