@@ -12,13 +12,11 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage{
 
-    @FindBy(xpath = "//*[@class='sp-fancybox-iframe sp-fancybox-skin sp-fancybox-iframe-2206 adaptive-resolution']") public WebElement frame_Loc;
-
-    @FindBy(xpath = "//*[@class='selectable-element element-wrap element-close-button no-draggable']") public WebElement popUp_Loc;
-
     @FindBy(xpath = "//*[@aria-label='close']") public WebElement popUp2_Loc;
 
     @FindBy(xpath = "//span[text()='Kabul Ediyorum']") public WebElement cookies_Loc;
+
+    @FindBy(xpath = "(//*[contains(@id, 'wrap-close-button')])[2]") public WebElement cookies2_Loc;
 
     @FindBy(xpath = "//*[@data-testid='header-account-button']") public WebElement loginBtn_Loc;
 
@@ -36,13 +34,11 @@ public class HomePage extends BasePage{
         BrowserUtils.waitFor(2);
 
 
-//        Driver.get().switchTo().frame(frame_Loc);
-//        popUp_Loc.click();
-
-        BrowserUtils.waitForClickablility(cookies_Loc,5);
+        BrowserUtils.waitForClickablility(cookies2_Loc,5);
+        cookies2_Loc.click();
+        BrowserUtils.waitFor(1);
         cookies_Loc.click();
-        BrowserUtils.waitForClickablility(popUp2_Loc,5);
-        popUp2_Loc.click();
+
     }
 
     public void clickLogin(){

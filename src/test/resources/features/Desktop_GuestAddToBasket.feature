@@ -6,6 +6,7 @@ Feature: Desktop | Guest add to basket
     And The user verifies redirected to homepage
     And The user navigates to "Kadın" "Tekstil" "Yağmurluk" category
     When The user verifies redirected to "/kadin-tekstil-yagmurluk" page
+    And The user closes pop-Ups
     And The user clicks anyone product
     And The user chooses color and size
     And The user clicks "SİPARİŞİ TAMAMLA" button

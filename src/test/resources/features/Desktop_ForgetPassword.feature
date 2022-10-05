@@ -6,6 +6,7 @@ Feature: Desktop | Forget Password - The user tries to send forget password emai
     And The user clicks login button
     And The user clicks "Şifremi Unuttum" button
     And The user verifies redirected to "/password/recovery/forgot" page
+    And The user closes pop-Ups
     Then The user clicks Şifremi Sıfırla button
     And The user verifies "Email alanı zorunludur" message
     And The user enters forget password email adress

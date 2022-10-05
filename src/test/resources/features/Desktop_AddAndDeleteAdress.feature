@@ -11,7 +11,7 @@ Feature: Desktop | The user adds new adress and delete
     And The user clicks login button
     Then The user clicks "Adreslerim" button
     And The user verifies redirected to "/account/addresses" page
-    #And The user closes pop-Ups
+    And The user closes pop-Ups
     And The user verifies "Teslimat adresi bulunmamaktadır." message
     When The user clicks "Yeni Adres Ekle" button
     And The user enters valid informations

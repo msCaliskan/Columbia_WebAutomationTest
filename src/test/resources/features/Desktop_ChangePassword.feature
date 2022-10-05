@@ -10,10 +10,11 @@ Feature: Desktop | Change password of the account
     And The user clicks login button
     And The user clicks "Şifre Değiştir" button
     And The user verifies redirected to "/account/changePassword" page
+    And The user closes pop-Ups
 
   Scenario: Change password of the current customer
 
-    #And The user closes pop-Ups
+
     And The user enters old, new and confirm new password
     Then The user verifies "Şifrenizi başarıyla değiştirdiniz" message
     And The user clicks login button

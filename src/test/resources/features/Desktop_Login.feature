@@ -12,7 +12,7 @@ Feature: Desktop | Login with valid and invalid credentials
     When The user clicks login button
     And The user clicks "Üyelik Bilgilerim" button
     And The user verifies redirected to "/account/info" page
-    #And The user closes pop-Ups
+    And The user closes pop-Ups
     And The user checks "Musa", "Çalışkan", "musainveon@gmail.com" and "0(507) 500 29 20" informations
     And The user clicks login button
     And The user clicks "Çıkış Yap" button

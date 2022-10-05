@@ -10,7 +10,7 @@ Feature: Desktop | Store Delivery
     And The user clicks " GİRİŞ YAP" button
     And The user navigates to "Erkek" "Aksesuar" "Boyunluk" category
     When The user verifies redirected to "/erkek-aksesuar-boyunluk" page
-#    And The user closes pop-Ups
+    And The user closes pop-Ups
     And The user clicks anyone product
     And The user chooses color and size
     And The user clicks "SİPARİŞİ TAMAMLA" button
