@@ -6,6 +6,7 @@ import com.columbia.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -16,7 +17,7 @@ public class HomePage extends BasePage{
 
     @FindBy(xpath = "//span[text()='Kabul Ediyorum']") public WebElement cookies_Loc;
 
-    @FindBy(xpath = "(//*[contains(@id, 'wrap-close-button')])[2]") public WebElement cookies2_Loc;
+    @FindBy(xpath = "//*[@aria-label='close']") public WebElement cookies2_Loc;
 
     @FindBy(xpath = "//*[@data-testid='header-account-button']") public WebElement loginBtn_Loc;
 
@@ -68,10 +69,11 @@ public class HomePage extends BasePage{
     }
     public void closePopUp(){
         BrowserUtils.waitFor(2);
-        if (popUp2_Loc.isDisplayed()) {
-            popUp2_Loc.click();
-            BrowserUtils.waitFor(1);
-        }
+       try {
+           popUp2_Loc.click();
+       }catch (WebDriverException e){
+           BrowserUtils.waitFor(1);
+       }
     }
 
     public void invalidEmailCheck(){
