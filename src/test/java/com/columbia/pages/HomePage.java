@@ -68,7 +68,7 @@ public class HomePage extends BasePage{
         BrowserUtils.waitFor(1);
     }
     public void closePopUp(){
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(1);
        try {
            popUp2_Loc.click();
        }catch (WebDriverException e){

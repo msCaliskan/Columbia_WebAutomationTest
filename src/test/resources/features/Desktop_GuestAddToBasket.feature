@@ -13,6 +13,7 @@ Feature: Desktop | Guest add to basket
     And The user verifies redirected to "/basket" page
     When The user clicks "Üye Olmadan Devam Et" button
     And The user verifies redirected to "/checkout" page
+    And The user clicks "Yeni Adres Ekle" button
     When The user enters valid informations for guest
     And The user clicks "Kaydet" button
     And The user clicks Ödeme Adımına Geç button
