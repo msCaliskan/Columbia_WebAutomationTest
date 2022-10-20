@@ -1,4 +1,5 @@
 Feature: Desktop | Forget Password - The user tries to send forget password email
+
   @smoke
   Scenario: The user tries to send an email with empty inputs
     Given The user visits Columbia homepage
