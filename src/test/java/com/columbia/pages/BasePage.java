@@ -38,6 +38,13 @@ public abstract class BasePage {
     BrowserUtils.waitFor(2);
     }
 
+    public static void clickButtonn(String button){
+        String button_Loc = "(//*[text()='"+button+"'])[2]";
+        BrowserUtils.waitForClickablility(Driver.get().findElement(By.xpath(button_Loc)),5);
+        Driver.get().findElement(By.xpath(button_Loc)).click();
+        BrowserUtils.waitFor(2);
+    }
+
     /**
      * This method will navigate user to the specific module in useinsider application.
      * For example: if tab is equals to More, and module equals to Careers,

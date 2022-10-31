@@ -12,24 +12,20 @@ import java.util.List;
 public class StepDefinitions {
 
     AccountPage accountPage = new AccountPage();
-    HomePage homePage = new HomePage();
+    AddressPage addressPage = new AddressPage();
     CategoryAndProductPage categoryAndProductPage = new CategoryAndProductPage();
+    ChangePasswordPage changePasswordPage = new ChangePasswordPage();
     CheckoutPage checkoutPage = new CheckoutPage();
+    HomePage homePage = new HomePage();
 
     @Given("The user visits Columbia homepage")
     public void the_user_visits_Columbia_homepage() {
         homePage.gotoHomePage();
-        BrowserUtils.waitFor(1);
     }
 
     @And("The user verifies redirected to homepage")
     public void the_user_verifies_redirected_to_homepage() {
         HomePage.checkHomePage();
-    }
-
-    @Given("The user hovers to login button")
-    public void the_user_hovers_to_login_button() {
-        BrowserUtils.hover(homePage.loginBtn_Loc);
     }
 
     @Given("The user enters valid credentials")
@@ -42,13 +38,6 @@ public class StepDefinitions {
         homePage.clickLogin();
     }
 
-    @Given("The user clicks hamburger menu button")
-    public void the_user_clicks_hamburger_menu_button() {
-        BrowserUtils.waitFor(2);
-        homePage.hamburgerMenuBtn_Loc.click();
-        BrowserUtils.waitFor(1);
-    }
-
     @When("The user verifies redirected to {string} page")
     public void the_user_verifies_redirected_to_page(String expUrl) {
         BasePage.verifyUrl(expUrl);
@@ -58,10 +47,6 @@ public class StepDefinitions {
     public void the_user_checks_and_informations(String name, String lastName, String email, String phone) {
         accountPage.getInformation(name,lastName,email,phone);
     }
-    @When("The user clicks arrow button")
-    public void the_user_clicks_arrow_button() {
-        accountPage.arrowBtn_Loc.click();
-    }
 
     @When("The user clicks {string} button")
     public void the_user_clicks_button(String button) {
@@ -70,17 +55,17 @@ public class StepDefinitions {
 
     @When("The user enters old, new and confirm new password")
     public void the_user_enters_old_new_and_confirm_new_password() {
-        accountPage.changePassword();
+        changePasswordPage.changePassword();
     }
 
     @When("The user enters valid informations")
     public void the_user_enters_valid_informations() {
-      accountPage.enterAdress();
+      addressPage.enterAdress();
     }
 
     @When("The user enters valid informations for guest")
     public void theUserEntersValidInformationsForGuest() {
-        accountPage.enterGuestAdress();
+        checkoutPage.enterGuestAdress();
     }
 
     @Given("The user navigates to {string} {string} {string} category")
@@ -88,8 +73,8 @@ public class StepDefinitions {
         BasePage.navigateToModule(tab,module,subModule);
     }
 
-    @When("The user clicks anyone product")
-    public void the_user_clicks_anyone_product() {
+    @When("The user clicks any product")
+    public void the_user_clicks_any_product() {
         categoryAndProductPage.clickProductRandom();
     }
 
@@ -104,8 +89,8 @@ public class StepDefinitions {
         Assert.assertEquals(message, BasePage.verifyMessage(message));
     }
 
-    @When("The user chooses color and size")
-    public void the_user_chooses_color_and_size() {
+    @When("The user chooses size")
+    public void the_user_chooses_size() {
         categoryAndProductPage.selectSize();
     }
 
@@ -118,12 +103,6 @@ public class StepDefinitions {
     public void the_user_selects_3D_Secure_On_Bilgilendirme_and_Mesafeli_Satis_Sozlesmesi_buttons() {
         checkoutPage.checkBox();
     }
-
-    @Then("The user clicks Back button")
-    public void the_user_clicks_Back_button() {
-        Driver.get().navigate().back();
-    }
-
 
     @Then("The user enters forget password email adress")
     public void the_user_enters_forget_password_email_adress() {
@@ -139,40 +118,14 @@ public class StepDefinitions {
         categoryAndProductPage.searchResult(string);
     }
 
-    @Then("The user clicks Şifremi Sıfırla button")
-    public void theUserClicksŞifremiSıfırlaButton() {
-        accountPage.sifremiSifirla_Loc.click();
-    }
-
     @And("The user closes pop-Ups")
     public void theUserClosesPopUps() {
         homePage.closePopUp();
     }
 
-    @And("The user closes arrows")
-    public void theUserClosesArrows() {
-        accountPage.closeArrow();
-    }
-
-    @And("The user clicks Ödeme Adımına Geç button")
-    public void theUserClicksÖdemeAdımınaGeçButton() {
-        accountPage.odemeAdimiBtn();
-    }
-
     @Then("The user clicks Sepetim button")
     public void theUserClicksSepetimButton() {
-        checkoutPage.sepetim_Loc.click();
-        BrowserUtils.waitFor(1);
-    }
-
-    @And("The user verifies message")
-    public void theUserVerifiesMessage() {
-        AccountPage.verifyMessage();
-    }
-
-    @And("The user clicks Çıkış button")
-    public void theUserClicksÇıkışButton() {
-        BrowserUtils.clickWithJS(accountPage.cikisYap_Loc);
+        checkoutPage.clickSepetimButton();
     }
 
     @And("The user enters invalid email")
@@ -187,17 +140,17 @@ public class StepDefinitions {
 
     @And("The user chooses store informations")
     public void theUserChoosesStoreInformations() {
-        accountPage.storeInformations();
+        checkoutPage.storeInformations();
     }
 
     @And("The user enters wrong old password")
     public void theUserEntersWrongOldPassword() {
-        accountPage.wrongOldPassword();
+        changePasswordPage.wrongOldPassword();
     }
 
     @And("The user enters different passwords")
     public void theUserEntersDifferentPasswords() {
-        accountPage.differentPassword();
+        changePasswordPage.differentPassword();
     }
 
     @And("The user enters valid price")
@@ -205,4 +158,13 @@ public class StepDefinitions {
         categoryAndProductPage.validPrice();
     }
 
+    @And("The user clicks {string} buttonn")
+    public void theUserClicksButtonn(String button) {
+        BasePage.clickButtonn(button);
+    }
+
+    @And("The user navigates to {string} {string} category")
+    public void theUserNavigatesToCategory(String category, String module) {
+        HomePage.navigateToCategory(category,module);
+    }
 }

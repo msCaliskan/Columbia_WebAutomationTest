@@ -11,7 +11,7 @@ Feature: Desktop | Price Alert
     And The user navigates to "Çocuk" "Ayakkabı" "Bot" category
     When The user verifies redirected to "/cocuk-ayakkabi-bot" page
     And The user closes pop-Ups
-    And The user clicks anyone product
+    And The user clicks any product
     Then The user clicks " Fiyatı Düşünce Haber Ver" button
     And The user enters valid price
     Then The user clicks "Kaydet" button
