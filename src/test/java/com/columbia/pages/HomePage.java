@@ -54,9 +54,9 @@ public class HomePage extends BasePage{
     }
 
     public static void checkHomePage(){
-        String expectedUrl ="https://www.columbia.com.tr/";
-        String actualUrl = Driver.get().getCurrentUrl();
-        Assert.assertEquals(expectedUrl,actualUrl);
+        String expectedTitle ="Columbia Türkiye Online Shop";
+        String actualTitle = Driver.get().getTitle();
+        Assert.assertEquals(expectedTitle,actualTitle);
     }
 
     public static void navigateToCategory(String tab, String module) {

@@ -1,17 +1,7 @@
 package com.columbia.pages;
 
-
-import com.columbia.utilities.BrowserUtils;
-import com.columbia.utilities.ConfigurationReader;
-import com.columbia.utilities.Driver;
-import io.cucumber.java.en_old.Ac;
-import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.List;
 
 import static org.junit.Assert.*;
 

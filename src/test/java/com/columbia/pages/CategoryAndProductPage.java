@@ -1,15 +1,11 @@
 package com.columbia.pages;
 
 import com.columbia.utilities.BrowserUtils;
-import com.columbia.utilities.Driver;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -49,6 +45,12 @@ public class CategoryAndProductPage extends BasePage {
                     break;
                 }
         }
+    }
+
+    public void clickHearthButton(){
+        BrowserUtils.waitForClickablility(hearthBtn_Loc,5);
+        hearthBtn_Loc.click();
+        BrowserUtils.waitFor(1);
     }
 
     public void searchResult(String string){

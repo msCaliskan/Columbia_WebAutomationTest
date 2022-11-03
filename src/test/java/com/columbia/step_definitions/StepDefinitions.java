@@ -1,13 +1,9 @@
 package com.columbia.step_definitions;
 
 import com.columbia.pages.*;
-import com.columbia.utilities.BrowserUtils;
 import com.columbia.utilities.ConfigurationReader;
-import com.columbia.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
-
-import java.util.List;
 
 public class StepDefinitions {
 
@@ -80,8 +76,7 @@ public class StepDefinitions {
 
     @When("The user clicks hearth button")
     public void the_user_clicks_hearth_button() {
-        categoryAndProductPage.hearthBtn_Loc.click();
-        BrowserUtils.waitFor(1);
+        categoryAndProductPage.clickHearthButton();
     }
 
     @When("The user verifies {string} message")
