@@ -11,7 +11,9 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage{
 
-    @FindBy(xpath = "//*[@aria-label='close']") public WebElement popUp2_Loc;
+    @FindBy(xpath = "//*[contains(@class, 'sp-fancybox-iframe')]") public WebElement iframe_Loc;
+
+    @FindBy(xpath = "//*[@class='fa fa-times element-close-button']") public WebElement popUp2_Loc;
 
     @FindBy(xpath = "//span[text()='Kabul Ediyorum']") public WebElement cookies_Loc;
 
@@ -90,6 +92,7 @@ public class HomePage extends BasePage{
     public void closePopUp(){
         BrowserUtils.waitFor(1);
        try {
+           Driver.get().switchTo().frame(iframe_Loc);
            popUp2_Loc.click();
        }catch (WebDriverException e){
            BrowserUtils.waitFor(1);
