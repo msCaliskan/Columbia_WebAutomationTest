@@ -5,6 +5,7 @@ Feature: Desktop | Store Delivery
 
     Given The user visits Columbia homepage
     And  The user verifies redirected to homepage
+    And The user closes popUp
     And The user clicks login button
     And The user enters valid credentials
     And The user clicks " GİRİŞ YAP" button

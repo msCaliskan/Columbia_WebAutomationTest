@@ -4,6 +4,7 @@ Feature: Desktop | Guest add to basket
   Scenario:Guest add to basket and delete product from basket
     Given The user visits Columbia homepage
     And The user verifies redirected to homepage
+    And The user closes popUp
     And The user navigates to "Kadın" "Tekstil" "Yağmurluk" category
     When The user verifies redirected to "/kadin-tekstil-yagmurluk" page
     And The user closes pop-Ups

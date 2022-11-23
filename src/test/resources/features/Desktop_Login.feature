@@ -4,6 +4,7 @@ Feature: Desktop | Login with valid and invalid credentials
   Background:
     Given The user visits Columbia homepage
     And The user verifies redirected to homepage
+    And The user closes popUp
     And The user clicks login button
 
   Scenario: Login with valid credentials

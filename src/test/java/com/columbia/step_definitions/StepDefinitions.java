@@ -162,4 +162,9 @@ public class StepDefinitions {
     public void theUserNavigatesToCategory(String category, String module) {
         HomePage.navigateToCategory(category,module);
     }
+
+    @And("The user closes popUp")
+    public void theUserClosesPopUp() {
+        homePage.closePopUp2();
+    }
 }

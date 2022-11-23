@@ -19,6 +19,8 @@ public class HomePage extends BasePage{
 
     @FindBy(xpath = "//*[@aria-label='close']") public WebElement cookies2_Loc;
 
+    @FindBy(css = "#ins-frameless-overlay") public WebElement popUp_Loc;
+
     @FindBy(xpath = "//*[@data-testid='header-account-button']") public WebElement loginBtn_Loc;
 
     @FindBy(css = "#email") public WebElement email_Loc;
@@ -42,9 +44,9 @@ public class HomePage extends BasePage{
     }
 
     public void clickLogin(){
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(1);
         loginBtn_Loc.click();
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(1);
     }
 
     public void login(){
@@ -108,4 +110,12 @@ public class HomePage extends BasePage{
        password_Loc.sendKeys("Inveon34...");
     }
 
+    public void closePopUp2(){
+        try {
+            BrowserUtils.waitFor(1);
+            popUp_Loc.click();
+        }catch (Exception e){
+            BrowserUtils.waitFor(1);
+        }
+    }
 }

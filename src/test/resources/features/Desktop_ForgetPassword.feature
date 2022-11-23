@@ -4,6 +4,7 @@ Feature: Desktop | Forget Password - The user tries to send forget password emai
   Scenario: The user tries to send an email with empty inputs
     Given The user visits Columbia homepage
     And The user verifies redirected to homepage
+    And The user closes popUp
     And The user clicks login button
     And The user clicks "Şifremi Unuttum" button
     And The user verifies redirected to "/password/recovery/forgot" page

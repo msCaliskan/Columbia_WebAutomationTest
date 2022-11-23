@@ -5,6 +5,7 @@ Feature: Desktop | Filter feature
 
     Given The user visits Columbia homepage
     And The user verifies redirected to homepage
+    And The user closes popUp
     And The user navigates to "Erkek" "Yeni Gelenler" category
     When The user verifies redirected to "/erkek-yeni-gelenler" page
     And The user clicks "Alt Giyim" button
