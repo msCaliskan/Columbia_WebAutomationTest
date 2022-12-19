@@ -32,7 +32,7 @@ Feature: Desktop | Store Delivery
     And The user verifies "Kart numarası geçersizdir" message
     Then The user clicks Sepetim button
     And The user clicks "Kaldır" button
-    And The user verifies "Sepetinizde ürün bulunmamaktadır." message
+    And The user verifies "Sepetinizde ürün bulunmuyor yüzlerce ürün ve model arasından dilediğinizi seçin ve hemen alışverişe başlayın" message
     And The user clicks login button
     And The user clicks "Adreslerim" button
     And The user clicks "Sil" button
