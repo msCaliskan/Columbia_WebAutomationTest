@@ -9,6 +9,7 @@ Feature: Desktop | Guest add to basket
     When The user verifies redirected to "/kadin-tekstil-yagmurluk" page
     And The user closes pop-Ups
     And The user clicks any product
+    And The user closes popUpss
     And The user chooses size
     And The user clicks "SEPETE GİT" button
     And The user verifies redirected to "/basket" page

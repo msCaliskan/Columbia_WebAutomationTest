@@ -12,6 +12,7 @@ Feature: Desktop | Add to basket
   When The user verifies redirected to "/erkek-aksesuar-boyunluk" page
   And The user closes pop-Ups
   And The user clicks any product
+  And The user closes popUpss
   And The user chooses size
   And The user clicks "SEPETE GİT" button
   And The user verifies redirected to "/basket" page
