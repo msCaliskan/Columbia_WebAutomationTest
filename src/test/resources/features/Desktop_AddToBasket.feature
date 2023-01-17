@@ -8,8 +8,8 @@ Feature: Desktop | Add to basket
   And The user clicks login button
   And The user enters valid credentials
   And The user clicks " GİRİŞ YAP" button
-  And The user navigates to "Erkek" "Aksesuar" "Boyunluk" category
-  When The user verifies redirected to "/erkek-aksesuar-boyunluk" page
+  And The user navigates to "Kadın" "Tekstil" "Yağmurluk" category
+  When The user verifies redirected to "/kadin-tekstil-yagmurluk" page
   And The user closes pop-Ups
   And The user clicks any product
   And The user closes popUpss
