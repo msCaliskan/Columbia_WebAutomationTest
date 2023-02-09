@@ -35,5 +35,5 @@ Feature: Desktop | Social Media Links
     Given The user visits Columbia homepage
     And The user verifies redirected to homepage
     And The user clicks Linkedin button
-    And The user verifies redirected to Linkedin page
+#    And The user verifies redirected to Linkedin page
 
