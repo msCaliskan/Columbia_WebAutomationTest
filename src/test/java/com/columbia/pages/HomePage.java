@@ -15,6 +15,10 @@ public class HomePage extends BasePage{
 
     @FindBy(xpath = "//*[contains(@class, 'sp-fancybox-iframe')]") public WebElement iframe_Loc;
 
+    @FindBy(xpath = "//*[@class='sp-fancybox-iframe sp-fancybox-skin sp-fancybox-iframe-2913 adaptive-resolution']") public WebElement iframe2_Loc;
+
+    @FindBy(xpath = "//*[@class='fa fa-times element-close-button']") public WebElement popUpp_Loc;
+
     @FindBy(xpath = "//*[@class='fa fa-times element-close-button']") public WebElement popUp2_Loc;
 
     @FindBy(xpath = "//span[text()='Kabul Ediyorum']") public WebElement cookies_Loc;
@@ -52,6 +56,12 @@ public class HomePage extends BasePage{
 
         BrowserUtils.waitFor(2);
 
+        try {
+            Driver.get().switchTo().frame(iframe2_Loc);
+            popUpp_Loc.click();
+        }catch (Exception e){
+            BrowserUtils.waitFor(1);
+        }
 
         BrowserUtils.waitForClickablility(cookies2_Loc,5);
         cookies2_Loc.click();
